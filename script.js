@@ -1,5 +1,5 @@
 const loadCard = async() => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
     const data = await res.json()
     const cards = data.posts
     console.log(cards)
@@ -28,25 +28,28 @@ const displayCard = (cards) => {
                 <h2 class="card-title">${card.title}</h2>
                 <p>${card.description}</p>
                 <hr>
-               <div class="flex justify-between">
+               <div class="flex justify-around ">
               
                <div class="flex gap-6">
                   <div class="flex gap-3">
                       <img src="icon/comment.png" alt="">
-                       <span>560</span>
+                       <span>${card.comment_count}</span>
                    </div>
                   <div class="flex gap-3">
                       <img src="icon/eye.png" alt="">
-                       <span>1568</span>
+                       <span>${card.view_count}</span>
                    </div>
                   <div class="flex gap-3">
                       <img src="icon/clock.png" alt="">
-                       <span>5 min</span>
+                       <span>${card.posted_time} min</span>
                    </div>
                </div>
-               <div class=" ">
-               <img src="icon/email.png" alt="">
-               </div>
+                <div class="">
+                <img onclick="" src="icon/Vector.svg" alt="">
+                
+             
+                
+                </div>
                </div>
             </div>
         </div>`
