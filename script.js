@@ -76,12 +76,21 @@ const displayLatestPost = (posts) => {
     <figure class="px-10 pt-10">
     <img src="${post.cover_image}" alt="Shoes" class="rounded-xl" />
   </figure>
-  <div class="card-body items-center text-center">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions">
-      <button class="btn btn-primary">Buy Now</button>
+  <div class="card-body">
+   <div class="flex gap-3">
+   <img src="icon/calender.png" alt="">
+   <h2 class="card-title">${post.author.posted_date}</h2>
+   </div>
+    <p class="font-extrabold">${post.title}</p>
+    <p>${post.description}</p>
+    <div class="flex gap-4">
+    <img class='w-11 h-11 rounded-full mt-2'  src="${post.profile_image}" alt="Shoes" class="rounded-xl" />
+    <div class="space-y-1">
+    <p class="font-extrabold">${post.author.name}</p>
+    <p>${post.author.designation}</p>
     </div>
+    </div>
+    
   </div> 
   
   `
