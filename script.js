@@ -46,9 +46,6 @@ const displayCard = (cards) => {
                </div>
                 <div class="">
                 <img onclick="" src="icon/Vector.svg" alt="">
-                
-             
-                
                 </div>
                </div>
             </div>
@@ -56,6 +53,8 @@ const displayCard = (cards) => {
 
         postContainer.appendChild(postCard)
     });
+
+    
 }
 
 loadCard()
