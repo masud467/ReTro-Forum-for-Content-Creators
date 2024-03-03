@@ -1,13 +1,13 @@
-const loadCard = async() => {
+const loadPost = async() => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
     const data = await res.json()
     const cards = data.posts
     console.log(cards)
-    displayCard(cards)
+    displayPost(cards)
 }
 
 
-const displayCard = (cards) => {
+const displayPost = (cards) => {
     const postContainer = document.getElementById('post-container')
 
     cards.forEach(card => {
@@ -57,4 +57,41 @@ const displayCard = (cards) => {
     
 }
 
-loadCard()
+
+const LoadLatestPost = async() => {
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+    const posts = await res.json()
+    console.log(posts)
+    displayLatestPost(posts)
+}
+
+
+const displayLatestPost = (posts) => {
+    const latestPostContainer = document.getElementById('latest-post-container')
+    
+   posts.forEach(post =>{
+    const latestPostCard = document.createElement('div')
+    latestPostCard.classList = 'card w-96 bg-base-100 shadow-xl'
+    latestPostCard.innerHTML = `
+    <figure class="px-10 pt-10">
+    <img src="${post.cover_image}" alt="Shoes" class="rounded-xl" />
+  </figure>
+  <div class="card-body items-center text-center">
+    <h2 class="card-title">Shoes!</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <div class="card-actions">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div> 
+  
+  `
+
+  latestPostContainer.appendChild(latestPostCard)
+   })
+
+  
+}
+
+
+loadPost()
+LoadLatestPost()
