@@ -42,7 +42,7 @@
             </div>
         </div>
     </header>
-    <main class="mx-auto w-[1170px]">
+    <main class="mx-auto lg:w-[1170px]">
         <!-- banner section -->
         <div class="hero min-h-screen rounded-3xl overflow-hidden mt-10" style="background-image: url('/images/bg-banner.png');   background-color: rgb(18, 19, 45);" >
             <div class="hero-overlay bg-opacity-60"></div>
@@ -57,7 +57,7 @@
                       </label>
                     </div>
                 </div>
-                <div class=" w-1/2 h-2/3 shadow-2xl bg-base-100 p-12 space-y-5 mr-20 mt-40 rounded-2xl">
+                <div class=" w-1/2 h-2/3 shadow-2xl bg-base-100 p-12 space-y-5 mr-20 lg:mt-40 rounded-2xl">
                     <div class="flex justify-around space-x-10">
                         <p>Registered Users</p>
                         <span>01</span>
@@ -84,18 +84,18 @@
                </div>
            <div class="text-center space-y-5 ">
                <h3 class="text-4xl font-extrabold text-black">Let’s Discuss</h3>
-               <p class="mx-64">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+               <p class="lg:mx-64">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
            </div>
            
-           <div class="flex justify-between gap-6">
-                <div id="post-container" class="mt-10 space-y-5 w-[770px]">
+           <div class="lg:flex justify-between gap-6">
+                <div id="post-container" class="mt-10 space-y-5 lg:w-[770px]">
                 </div>
-                <div id="card-show" class="bg-[#F3F3F5] p-10 mt-10 h-max hidden">
-                    <div class="flex gap-x-24">
+                <div id="card-show" class="bg-[#F3F3F5] p-10 mt-10 lg:h-max ">
+                    <div class="flex lg:gap-x-24">
                         <h1>Title</h1>
                         <div class="flex gap-4">
                             <img src="icon/Frame.png" alt="">
-                            <p>Mark as read <span>( )</span></p>
+                            <p>Mark as read <span id="count-show">( )</span></p>
                         </div>
                     </div>
                     <div class="bg-white mt-5 p-7 flex gap-5">
@@ -125,13 +125,13 @@
         <section class="mt-10">
             <div class="text-center">
                 <h1 class="text-black font-extrabold text-4xl mb-4">Latest Posts</h1>
-                <p class="mx-56">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+                <p class="lg:mx-56">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
             </div>
-            <div id="latest-post-container" class="flex gap-5 mt-6"> 
+            <div id="latest-post-container" class="lg:flex lg:gap-5 space-y-5  mt-6"> 
             </div>
         </section>
     </main>
-    <!-- footer section -->
+    
         <footer class="footer footer-center p-10 bg-base-200  rounded mt-16 m-10 mx-auto">
             <h1 class="font-extrabold text-4xl">ReTro</h1>
             <p>ReTro Forum: Your hub for nostalgia and innovation. Join us to explore the past, present, and future.</p>
