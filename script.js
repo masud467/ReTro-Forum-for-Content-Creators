@@ -19,9 +19,9 @@ const displayPost = (cards) => {
         const postCard = document.createElement('div')
         postCard.classList = 'card card-side bg-base-100 shadow-xl p-7'
         postCard.innerHTML = `
-        <div id="indicator"  class="indicator">
+        <div class="indicator">
         <figure class='w-16 h-16 rounded-2xl'><img src="${card.image}" alt="Movie"/></figure>
-        <span id="indicator-color" class="badge badge-xs badge-primary indicator-item"></span>
+        <span id="indicator-color" class="badge badge-xs bg-green-600 badge-primary indicator-item"></span>
         </div>
        
         <div>
@@ -114,6 +114,8 @@ const detailShow = () => {
     
     
     `
+
+    cardShowContainer.appendChild(cardShow)
 
     
 
