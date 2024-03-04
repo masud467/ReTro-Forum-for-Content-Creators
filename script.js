@@ -1,5 +1,5 @@
-const loadPost = async() => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
+const loadPost = async(categoryName=categoryName) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`)
     const data = await res.json()
     const cards = data.posts
     console.log(cards)
@@ -8,15 +8,18 @@ const loadPost = async() => {
 
 
 const displayPost = (cards) => {
+    
     const postContainer = document.getElementById('post-container')
-
+    postContainer.innerHTML = ''
+    
     cards.forEach(card => {
+        
         const postCard = document.createElement('div')
         postCard.classList = 'card card-side bg-base-100 shadow-xl p-7'
         postCard.innerHTML = `
         <div  class="indicator">
         <figure class='w-16 h-16 rounded-2xl'><img src="${card.image}" alt="Movie"/></figure>
-        <span class="badge badge-xs badge-primary indicator-item"></span>
+        <span id="indicator-color" class="badge badge-xs badge-primary indicator-item"></span>
         </div>
        
         <div>
@@ -52,10 +55,35 @@ const displayPost = (cards) => {
         </div>`
 
         postContainer.appendChild(postCard)
-    });
+    
+    });   
 
+    toggledLoadingSpinner(false)
+
+}
+
+
+const handleSearch = () => {
+    toggledLoadingSpinner(true)
+    const searchShow = document.getElementById('search-show')
+    const searchShowText = searchShow.value 
+    console.log(searchShowText)
+   
+    loadPost(searchShowText)
     
 }
+
+
+const toggledLoadingSpinner = (isLoading) => {
+    const loadingSpinner = document.getElementById('loading-spinner-show')
+    if(isLoading){
+        loadingSpinner.classList.remove('hidden')
+    }
+    else{
+        loadingSpinner.classList.add('hidden')
+    }
+}
+
 
 
 const LoadLatestPost = async() => {
@@ -102,5 +130,8 @@ const displayLatestPost = (posts) => {
 }
 
 
+
+
+handleSearch()
 loadPost()
 LoadLatestPost()

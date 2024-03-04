@@ -8,15 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script> 
 </head>
 <body >
-    <header class="mx-auto w-[1170px]">
+    <header class="mx-auto lg:w-[1170px]">
         <!-- navbar section -->
         <div class="navbar bg-base-100 mt-5">
             <div class="navbar-start">
-              <div class="dropdown">
+              <!-- <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-              </div>
+              </div> -->
               <a class="btn btn-ghost text-4xl font-extrabold">ReTro</a>
             </div>
             
@@ -52,8 +52,8 @@
                       <h1 class="mb-5  text-5xl font-bold">Welcome to the <span>ReTro</span> Forum</h1>
                       <p class="mb-5">Share your favorite opinion and win and wp forum coffee mug!</p>
                       <label class="input input-bordered flex items-center gap-2">
-                        <input type="text" class="grow" placeholder="Search here anything" />
-                        <span class="btn bg-[#797DFC] rounded-[46px] px-8 text-white font-bold text-xl ">Search</span>
+                        <input type="text" id="search-show" class="grow text-black" placeholder="Search here anything" />
+                        <span onclick="handleSearch()" class="  btn  bg-[#797DFC] rounded-[46px] px-8 text-white font-bold text-xl ">Search</span>
                       </label>
                     </div>
                 </div>
@@ -79,10 +79,14 @@
         </div>
         <!-- Let's Discuss and card section -->
         <section class="mt-10 ">
+            <div id="loading-spinner-show" class="text-center hidden">
+                <span class="loading loading-spinner text-primary loading-lg"></span>
+               </div>
            <div class="text-center space-y-5 ">
                <h3 class="text-4xl font-extrabold text-black">Let’s Discuss</h3>
                <p class="mx-64">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
            </div>
+           
            <div class="flex justify-between gap-6">
                 <div id="post-container" class="mt-10 space-y-5 w-[770px]">
                 </div>
